@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family:'Segoe UI',sans-serif;
+            background-color: #0d0c0c;
+            color: #222;
+            line-height: 1.6;
+        }
+
+       header {
+            background-color: #0f3460;
+            color: white;
+            text-align: center;
+            padding: 10rem 14rem 10rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 2px solid #ff2e2e;
+            box-shadow: 0 5px 10px #ff2e2e;
+        }
+
+        header h1{
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p{
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+       
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #e94560;
+            margin-bottom: 1rem;
+            max-width: 140px;
+            flex-shrink: 0;
+        }
+
+        nav {
+            background-color: #e94560;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        section h2 {
+            font-size: 1.6rem;
+            color: #0f3460;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #e94560;
+            padding-bottom: 0.4rem;
+            display: inline-block;
+        }
+
+        /* ── about ── */
+        #about p {
+            font-size: 1rem;
+            max-width: 680px;
+            color: #444;
+        }
+
+        /* ── skills ── */
+        #skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        #skills ul li {
+            background-color: #0f3460;
+            color: white;
+            padding: 0.4rem 1.1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* ── projects ── */
+        #projects .project-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        #projects .project-card h3 {
+            color: #0f3460;
+            margin-bottom: 0.4rem;
+        }
+
+        #projects .project-card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* ── footer ── */
+        footer {
+            background-color: #0f3460;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #e94560;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+       
+        @media (min-width: 768px) {
+
+            .profile-img {
+                width: 160px;
+                height: 160px;
+            }
+
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            #projects {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+
+            #projects h2 {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* ── dark mode toggle button ── */
+        #dark-toggle {
+            margin-top: 1rem;
+            padding: 0.4rem 1.2rem;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        #dark-toggle:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* ── dark theme — toggled on <body> by JavaScript ── */
+        body.dark-theme {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-theme section h2 {
+            color: #90b4f0;
+        }
+
+        body.dark-theme #about p {
+            color: #ccc;
+        }
+
+        body.dark-theme #projects .project-card {
+            background: #1e1e1e;
+            border-color: #333;
+            color: #e0e0e0;
+        }
+
+        body.dark-theme #projects .project-card h3 {
+            color: #90b4f0;
+        }
+
+        body.dark-theme #projects .project-card p {
+            color: #aaa;
+        }
+
+        /* ── interactive skill cards ── */
+        #skills ul li {
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        #skills ul li:hover {
+            transform: scale(1.08);
+        }
+
+        #skills ul li.active-skill {
+            background-color: #e94560;
+        }
+
+        #skill-detail {
+            margin-top: 1.25rem;
+            padding: 1rem 1.25rem;
+            background: #e8f0fe;
+            border-left: 4px solid #0f3460;
+            border-radius: 6px;
+            color: #0f3460;
+            font-size: 0.95rem;
+            min-height: 50px;
+            transition: all 0.3s;
+        }
+
+        body.dark-theme #skill-detail {
+            background: #1e2a3a;
+            color: #90b4f0;
+            border-left-color: #90b4f0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://placehold.co/130x130" alt="Franklin Ryan Delfin" class="profile-img" />
+        <h1>FRANKLIN RYAN DELFIN</h1>
+        <p>IT Student</p>
+        <button id="dark-toggle">Dark Mode</button>
+        
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+    </nav>
+    </header>
+   
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+             Hi! I am an IT student who is passionate about technology.
+            I am currently learning web development and enjoying every
+            step of the journey.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li data-level="Intermediate — I can build structured web pages">HTML</li>
+            <li data-level="Beginner — Learning OOP concepts and syntax">Java</li>
+            <li data-level="Beginner — Understanding how networks communicate">Networking Basics</li>
+        </ul>
+         <div id="skill-detail">👆 Click a skill to see your proficiency level!</div>
+    </section>
+
+    <section id="projects">
+    <h2>My Projects</h2>
+
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio built with HTML, CSS and JavaScript
+      as part of my IT course.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>More Coming Soon</h3>
+      <p>I am still learning and will add more projects
+      as I grow!</p>
+    </div>
+
+  </section>
+
+  <footer id="contact">
+    <p>Contact me: yourname@email.com</p>
+    <p>
+      <a href="https://github.com">GitHub</a>
+      <a href="https://linkedin.com">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script>
+
+    // ── FEATURE 1: Dark Mode Toggle ──
+    const toggleBtn = document.getElementById('dark-toggle');
+
+    toggleBtn.addEventListener('click', function() {
+
+        // adds 'dark-theme' if missing, removes it if present
+        document.body.classList.toggle('dark-theme');
+
+        // update button text to match current mode
+        if (document.body.classList.contains('dark-theme')) {
+            toggleBtn.textContent = '☀️ Light Mode';
+        } else {
+            toggleBtn.textContent = '🌙 Dark Mode';
+        }
+    });
+
+
+    // ── FEATURE 2: Interactive Skill Cards ──
+    const skills = document.querySelectorAll('#skills ul li');
+    const skillDetail = document.getElementById('skill-detail');
+
+    skills.forEach(function(skill) {
+        skill.addEventListener('click', function() {
+
+            // remove red highlight from ALL skills first
+            skills.forEach(s => s.classList.remove('active-skill'));
+
+            // highlight only the one you clicked
+            skill.classList.add('active-skill');
+
+            // read data-level and show it in the detail box
+            skillDetail.textContent = skill.dataset.level;
+        });
+    });
+
+</script>
+
+
+
+</body>
+</html>
