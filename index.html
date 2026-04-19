@@ -11,6 +11,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+            scroll-behavior: smooth; 
+        }
 
         body{
             font-family:'Segoe UI',sans-serif;
@@ -120,7 +123,7 @@
            
         }
         #about:hover{
-            box-shadow: 0 0 20px #ffa31a; 
+            box-shadow: 0 0 30px #ffa31a; 
             background-color: transparent;
 
         }
@@ -139,7 +142,7 @@
            
         }
         #skills:hover{
-            box-shadow: 0 0 20px #ffa31a; 
+            box-shadow: 0 0 30px #ffa31a; 
             background-color: transparent;
 
         }
@@ -155,6 +158,7 @@
             flex-wrap: wrap;
             gap: 0.75rem;
             margin-top: 0.5rem;
+            
         }
 
         #skills ul li {
@@ -175,7 +179,7 @@
            
         }
         #projects:hover{
-            box-shadow: 0 0 20px #ffa31a; 
+            box-shadow: 0 0 30px #ffa31a; 
             background-color: transparent;
 
         }
@@ -186,6 +190,10 @@
             padding: 1.25rem 1.5rem;
             margin-bottom: 1rem;
             box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+        #projects .project-card:hover{
+            transform :scale(1.2);
+            
         }
 
         #projects .project-card h3 {
@@ -238,6 +246,7 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 1.5rem;
+               
             }
 
             #projects h2 {
@@ -313,7 +322,7 @@
         }
 
         #skills ul li:hover {
-            transform: scale(1.08);
+            transform: scale(1.10);
         }
 
         #skills ul li.active-skill {
