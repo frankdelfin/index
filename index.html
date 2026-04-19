@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Franklin Delfin</title>
 
     <style>
         *{
@@ -14,13 +14,13 @@
 
         body{
             font-family:'Segoe UI',sans-serif;
-            background-color: #0d0c0c;
-            color: #222;
+            background-color: BLACK;
+            color: white;
             line-height: 1.6;
         }
 
        header {
-            background-color: #0f3460;
+            background-color: black;
             color: white;
             text-align: center;
             padding: 10rem 14rem 10rem;
@@ -28,38 +28,53 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-bottom: 2px solid #ff2e2e;
-            box-shadow: 0 5px 10px #ff2e2e;
+            border-bottom: 2px solid #ffa31a;
+            box-shadow: 0 5px 10px #ffa31a;
         }
 
         header h1{
-            font-size: 2rem;
+            font-size: 2rem;    
             margin-bottom: 0.5rem;
         }
 
         header p{
             font-size: 1rem;
+            color: #ffa31a;
             opacity: 0.85;
         }
 
        
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #e94560;
+          
             margin-bottom: 1rem;
-            max-width: 140px;
+            max-width: 150px;
             flex-shrink: 0;
         }
 
         nav {
-            background-color: #e94560;
+            background: transparent;
+            border: 2px solid #ffa31a;
+            border-style:outset;
+            border-radius: 20px;
+            cursor: pointer;
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            padding: 0.5rem;
+            gap: 0rem;
+            padding: 0.5rem ;
+            margin-top: 2rem;
+
+
+
+
+            margin-top: 1rem;
+            padding: 0.4rem 1.2rem;
+            background: transparent;
+            color: white;
+            font-size: 0.9rem;
         }
 
         nav a {
@@ -89,14 +104,13 @@
             display: inline-block;
         }
 
-        /* ── about ── */
+      
         #about p {
             font-size: 1rem;
             max-width: 680px;
             color: #444;
         }
 
-        /* ── skills ── */
         #skills ul {
             list-style: none;
             display: flex;
@@ -113,7 +127,7 @@
             font-size: 0.95rem;
         }
 
-        /* ── projects ── */
+       
         #projects .project-card {
             background: white;
             border: 1px solid #ddd;
@@ -256,10 +270,10 @@
 
 <body>
     <header>
-        <img src="https://placehold.co/130x130" alt="Franklin Ryan Delfin" class="profile-img" />
+        <img src="profile2.0.jpg" alt="Franklin Ryan Delfin" class="profile-img" />
         <h1>FRANKLIN RYAN DELFIN</h1>
-        <p>IT Student</p>
-        <button id="dark-toggle">Dark Mode</button>
+        <p>WEB DEVELOPER</p>
+        <button id="dark-toggle">Light mode</button>
         
 
     <nav>
@@ -307,12 +321,15 @@
   </section>
 
   <footer id="contact">
-    <p>Contact me: yourname@email.com</p>
+    <p>Contact me: deldinfranklinryan@email.com</p>
     <p>
-      <a href="https://github.com">GitHub</a>
+      <a href="https://github.com/frankdelfin">GitHub</a>
       <a href="https://linkedin.com">LinkedIn</a>
     </p>
   </footer>
+
+
+
 
   <script>
 
@@ -326,9 +343,9 @@
 
         // update button text to match current mode
         if (document.body.classList.contains('dark-theme')) {
-            toggleBtn.textContent = '☀️ Light Mode';
-        } else {
             toggleBtn.textContent = '🌙 Dark Mode';
+        } else {
+            toggleBtn.textContent = '☀️ Light Mode';
         }
     });
 
@@ -352,8 +369,6 @@
     });
 
 </script>
-
-
 
 </body>
 </html>
