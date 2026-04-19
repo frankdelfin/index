@@ -23,7 +23,7 @@
             background-color: black;
             color: white;
             text-align: center;
-            padding: 10rem 14rem 10rem;
+            padding: 4rem 1.5rem; 
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -35,6 +35,8 @@
         header h1{
             font-size: 2rem;    
             margin-bottom: 0.5rem;
+            white-space: nowrap; 
+            font-size: clamp(1.2rem, 4vw, 2rem);
         }
 
         header p{
@@ -54,6 +56,8 @@
             max-width: 150px;
             flex-shrink: 0;
         }
+
+      
 
         nav {
             background: transparent;
@@ -78,15 +82,17 @@
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 0.4rem 1rem;
-            border-radius: 4px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.4rem 1rem;
+        border-radius: 4px;
+        transition: color 0.3s;  
         }
 
         nav a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffa31a;           
+            background-color: transparent; 
         }
 
         section {
@@ -97,18 +103,50 @@
 
         section h2 {
             font-size: 1.6rem;
-            color: #0f3460;
+            color: white;
             margin-bottom: 1rem;
-            border-bottom: 3px solid #e94560;
+            border-bottom: 3px solid #ffa31a;
+            
             padding-bottom: 0.4rem;
             display: inline-block;
         }
 
-      
+       #about {
+
+            margin-top: 3.5rem;
+            border: 2px solid #ffa31a;
+            border-radius: 12px;
+            transition: color 0.3s;  
+           
+        }
+        #about:hover{
+            box-shadow: 0 0 20px #ffa31a; 
+            background-color: transparent;
+
+        }
         #about p {
             font-size: 1rem;
             max-width: 680px;
             color: #444;
+        }
+
+         #skills {
+
+            margin-top: 3.5rem;
+            border: 2px solid #ffa31a;
+            border-radius: 12px;
+            transition: color 0.3s;  
+           
+        }
+        #skills:hover{
+            box-shadow: 0 0 20px #ffa31a; 
+            background-color: transparent;
+
+        }
+        #skills p{
+           color:#ffa31a; 
+           margin-bottom:0.5rem; 
+           font-weight:bold;
         }
 
         #skills ul {
@@ -120,14 +158,27 @@
         }
 
         #skills ul li {
-            background-color: #0f3460;
+            background-color: #ffa31a;
             color: white;
             padding: 0.4rem 1.1rem;
             border-radius: 20px;
             font-size: 0.95rem;
         }
 
-       
+        #projects {
+
+            margin-top: 3.5rem;
+            margin-bottom: 3.5rem;
+            border: 2px solid #ffa31a;
+            border-radius: 12px;
+            transition: color 0.3s;     
+           
+        }
+        #projects:hover{
+            box-shadow: 0 0 20px #ffa31a; 
+            background-color: transparent;
+
+        }
         #projects .project-card {
             background: white;
             border: 1px solid #ddd;
@@ -138,7 +189,7 @@
         }
 
         #projects .project-card h3 {
-            color: #0f3460;
+            color: #ffa31a;
             margin-bottom: 0.4rem;
         }
 
@@ -149,7 +200,7 @@
 
         /* ── footer ── */
         footer {
-            background-color: #0f3460;
+            background-color: #28282B;
             color: white;
             text-align: center;
             padding: 2rem 1rem;
@@ -157,7 +208,7 @@
         }
 
         footer a {
-            color: #e94560;
+            color: #ffa31a;
             text-decoration: none;
             margin: 0 0.5rem;
             font-weight: bold;
@@ -169,6 +220,10 @@
 
        
         @media (min-width: 768px) {
+
+             header {
+                padding: 10rem 14rem;   
+            }
 
             .profile-img {
                 width: 160px;
@@ -204,20 +259,33 @@
 
         #dark-toggle:hover {
             background: rgba(255,255,255,0.15);
+           
+        }
+        body.dark-theme #dark-toggle{
+            border-color: black;
+            color: black;
+        }
+        body.dark-theme nav a{
+            color: black;
+        }
+       body.dark-theme header {
+            background-color: white;
+            color: black;
+            border-bottom: 2px solid #ffa31a;
         }
 
         /* ── dark theme — toggled on <body> by JavaScript ── */
         body.dark-theme {
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: white;
+            color: black;
         }
 
         body.dark-theme section h2 {
-            color: #90b4f0;
+            color: #ffa31a;
         }
 
         body.dark-theme #about p {
-            color: #ccc;
+            color: black;
         }
 
         body.dark-theme #projects .project-card {
@@ -232,6 +300,10 @@
 
         body.dark-theme #projects .project-card p {
             color: #aaa;
+        }
+        body.dark-theme footer{
+            background-color: white;
+            color: black;
         }
 
         /* ── interactive skill cards ── */
@@ -252,7 +324,7 @@
             margin-top: 1.25rem;
             padding: 1rem 1.25rem;
             background: #e8f0fe;
-            border-left: 4px solid #0f3460;
+            border-left: 4px solid #1e1e1e;
             border-radius: 6px;
             color: #0f3460;
             font-size: 0.95rem;
@@ -261,7 +333,7 @@
         }
 
         body.dark-theme #skill-detail {
-            background: #1e2a3a;
+            background: #1e1e1e;
             color: #90b4f0;
             border-left-color: #90b4f0;
         }
@@ -273,7 +345,7 @@
         <img src="profile2.0.jpg" alt="Franklin Ryan Delfin" class="profile-img" />
         <h1>FRANKLIN RYAN DELFIN</h1>
         <p>WEB DEVELOPER</p>
-        <button id="dark-toggle">Light mode</button>
+        <button id="dark-toggle">☀️ Light mode</button>
         
 
     <nav>
@@ -287,21 +359,37 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-             Hi! I am an IT student who is passionate about technology.
-            I am currently learning web development and enjoying every
-            step of the journey.
+             Hi! I am an Information Technology student with a strong passion for technology and continuous learning. I am currently focusing on web development, where I am building my skills in creating responsive, user-friendly, and functional websites. I enjoy exploring how design and functionality come together to create meaningful digital experiences.
+
+As I progress in my journey, I am gaining hands-on experience with modern web technologies and best practices, while continuously improving my problem-solving and critical thinking skills. I am highly motivated to grow as a developer, take on new challenges, and contribute to innovative projects in the tech industry.
         </p>
     </section>
 
-    <section id="skills">
-        <h2>My Skills</h2>
-        <ul>
-            <li data-level="Intermediate — I can build structured web pages">HTML</li>
-            <li data-level="Beginner — Learning OOP concepts and syntax">Java</li>
-            <li data-level="Beginner — Understanding how networks communicate">Networking Basics</li>
-        </ul>
-         <div id="skill-detail">👆 Click a skill to see your proficiency level!</div>
-    </section>
+   <section id="skills">
+    <h2>My Skills</h2>
+
+    <p>Languages</p>
+        
+    
+    <ul>
+        <li data-level="Intermediate — I can build structured web pages">HTML</li>
+        <li data-level="Beginner — Learning CSS styling and layouts">CSS</li>
+        <li data-level="Beginner — Learning OOP concepts and syntax">Java</li>
+        <li data-level="Beginner — Learning interactive web behavior">JavaScript</li>
+        <li data-level="Intermediate — Building applications with C# and OOP">C#</li>
+        <li data-level="Beginner — Understanding how networks communicate">Networking Basics</li>
+    </ul>
+
+    <p > Tools </p>
+       
+   
+    <ul>
+        <li data-level="Tool — My primary code editor for web development">VS Code</li>
+        <li data-level="Tool — Used for building C# and .NET applications">Visual Studio</li>
+    </ul>
+
+    <div id="skill-detail">👆 Click a skill to see your proficiency level!</div>
+</section>
 
     <section id="projects">
     <h2>My Projects</h2>
@@ -338,16 +426,14 @@
 
     toggleBtn.addEventListener('click', function() {
 
-        // adds 'dark-theme' if missing, removes it if present
-        document.body.classList.toggle('dark-theme');
+    document.body.classList.toggle('dark-theme');
 
-        // update button text to match current mode
-        if (document.body.classList.contains('dark-theme')) {
-            toggleBtn.textContent = '🌙 Dark Mode';
-        } else {
-            toggleBtn.textContent = '☀️ Light Mode';
-        }
-    });
+    if (document.body.classList.contains('dark-theme')) {
+        toggleBtn.textContent = '☀️ Light Mode'; // currently dark
+    } else {
+        toggleBtn.textContent = '🌙 Dark Mode'; // currently light
+    }
+});
 
 
     // ── FEATURE 2: Interactive Skill Cards ──
